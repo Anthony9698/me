@@ -1,20 +1,15 @@
 import {
   Box,
-  Image,
   NavLink,
-  Button,
   ActionIcon,
   useMantineColorScheme,
   useComputedColorScheme,
   Drawer,
   Burger,
 } from "@mantine/core";
-import Logo from "../assets/me_2_logo.svg";
 import classes from "./Navbar.module.scss";
-import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineNightlightRound } from "react-icons/md";
 import { MdOutlineWbSunny } from "react-icons/md";
-import { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
 
 export default function Navbar() {

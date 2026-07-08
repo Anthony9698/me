@@ -1,0 +1,28 @@
+.projects {
+  margin-top: 10rem;
+  padding: var(--mantine-spacing-lg);
+
+  .projectCard {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .projectImage {
+      flex: 1.25;
+      border-bottom: 1px solid var(--mantine-color-gray-4);
+      height: 100%;
+      object-fit: fill;
+    }
+
+    .projectContent {
+      flex: 1;
+      padding: var(--mantine-spacing-md);
+
+      .projectStack {
+        display: flex;
+        gap: var(--mantine-spacing-md);
+        margin-top: var(--mantine-spacing-md);
+      }
+    }
+  }
+}

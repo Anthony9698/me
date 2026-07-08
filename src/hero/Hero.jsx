@@ -37,9 +37,7 @@ export default function Hero() {
           </Box>
         </Box>
       </Box>
-      <Box className={classes.laptop}>
-        <Image src={Torc} alt="Torc" />
-      </Box>
+      <Image className={classes.laptop} src={Torc} alt="Torc" />
     </Box>
   );
 }

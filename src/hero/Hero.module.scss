@@ -8,6 +8,7 @@
 
   .laptop {
     flex: 2;
+    max-width: 1200px;
   }
 
   @media (max-width: 768px) {
@@ -21,7 +22,7 @@
     flex-direction: column;
     justify-content: center;
     gap: var(--mantine-spacing-md);
-    padding: 0 var(--mantine-spacing-lg);
+    padding: 0 10rem;
     flex: 1;
 
     @media (max-width: 768px) {
