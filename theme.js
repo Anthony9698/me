@@ -1,20 +1,44 @@
-import { createTheme } from "@mantine/core";
+import { createTheme, virtualColor } from "@mantine/core";
 
 export const theme = createTheme({
-  primaryColor: "portfolioGreen",
+  primaryColor: "brand",
+
+  primaryShade: {
+    light: 5,
+    dark: 4,
+  },
 
   colors: {
+    brand: virtualColor({
+      name: "brand",
+      light: "portfolioGreen",
+      dark: "portfolioMint",
+    }),
+
     portfolioGreen: [
       "#edf7f3",
       "#d7eee6",
       "#afdccc",
       "#85c7b0",
       "#63b595",
-      "#4E937A",
+      "#4e937a",
       "#3f806a",
       "#316654",
       "#234c3f",
       "#143329",
+    ],
+
+    portfolioMint: [
+      "#effaf6",
+      "#d8f3e8",
+      "#b4e6d3",
+      "#8ed8bd",
+      "#6fcdaa",
+      "#57c49b",
+      "#43a982",
+      "#338767",
+      "#24644d",
+      "#164234",
     ],
 
     terracotta: [
@@ -23,24 +47,11 @@ export const theme = createTheme({
       "#f5c5aa",
       "#eca37a",
       "#e58654",
-      "#D88C60",
+      "#d88c60",
       "#bd6d43",
       "#975434",
       "#713d25",
       "#4d2717",
-    ],
-
-    warmGray: [
-      "#f8f6f2",
-      "#eeeae3",
-      "#ddd6ca",
-      "#c9beb0",
-      "#b3a495",
-      "#978878",
-      "#776a5e",
-      "#5d534a",
-      "#433c36",
-      "#2b2723",
     ],
   },
 
@@ -62,6 +73,7 @@ export const theme = createTheme({
   },
 
   defaultRadius: "md",
+  autoContrast: true,
 
   components: {
     Button: {

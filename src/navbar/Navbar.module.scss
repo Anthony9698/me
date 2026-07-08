@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: var(--mantine-spacing-md);
+
+  .themeToggle {
+    position: absolute;
+    right: 0.25rem;
+    top: var(--mantine-spacing-xl);
+  }
+
+  .burger {
+    position: absolute;
+    left: 0.25rem;
+    top: var(--mantine-spacing-xl);
+    width: 40px;
+    height: auto;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  .navLinks {
+    display: flex;
+    gap: var(--mantine-spacing-md);
+
+    .navLink {
+      width: fit-content;
+
+      div {
+        span {
+          font-size: var(--mantine-font-size-md);
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}

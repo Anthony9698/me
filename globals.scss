@@ -1,17 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap");
+
 :root {
   /* Brand */
   --color-primary: #4e937a;
   --color-primary-dark: #2f6f60;
   --color-primary-light: #a8cbb7;
+  --color-primary-soft: rgba(78, 147, 122, 0.12);
+  --color-primary-glow: rgba(78, 147, 122, 0.16);
 
   /* Accent */
   --color-accent: #d88c60;
   --color-accent-light: #f5c5aa;
+  --color-accent-soft: rgba(216, 140, 96, 0.14);
 
   /* Neutrals */
   --color-background: #f7f4ef;
   --color-surface: #ffffff;
+  --color-surface-transparent: rgba(255, 255, 255, 0.78);
   --color-surface-muted: #f0ebe3;
   --color-text: #1f2933;
   --color-text-muted: #66736d;
@@ -23,7 +28,7 @@
   --section-padding-x: clamp(1rem, 4vw, 2rem);
 
   /* Typography */
-  --font-body: --font-body: "Geist", system-ui, sans-serif;
+  --font-body: "Geist", system-ui, sans-serif;
 
   /* Effects */
   --shadow-soft: 0 18px 45px rgba(31, 41, 51, 0.08);
@@ -36,6 +41,42 @@
 
   --transition-fast: 150ms ease;
   --transition-base: 220ms ease;
+
+  --hero-green-glow: rgba(78, 147, 122, 0.22);
+  --hero-peach-glow: rgba(216, 140, 96, 0.18);
+  --hero-soft-glow: rgba(78, 147, 122, 0.08);
+}
+
+/* Mantine adds this attribute when colorScheme is dark */
+[data-mantine-color-scheme="dark"] {
+  /* Brand */
+  --color-primary: #6fcdaa;
+  --color-primary-dark: #8ed8bd;
+  --color-primary-light: #b4e6d3;
+  --color-primary-soft: rgba(111, 205, 170, 0.14);
+  --color-primary-glow: rgba(111, 205, 170, 0.2);
+
+  /* Accent */
+  --color-accent: #eca37a;
+  --color-accent-light: #f5c5aa;
+  --color-accent-soft: rgba(236, 163, 122, 0.13);
+
+  /* Neutrals */
+  --color-background: #0f1714;
+  --color-surface: #14221d;
+  --color-surface-transparent: rgba(20, 34, 29, 0.82);
+  --color-surface-muted: #1d3029;
+  --color-text: #eef7f3;
+  --color-text-muted: #a9bbb4;
+  --color-border: rgba(168, 203, 183, 0.18);
+
+  /* Effects */
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.22);
+
+  --hero-green-glow: rgba(111, 205, 170, 0.18);
+  --hero-peach-glow: rgba(236, 163, 122, 0.1);
+  --hero-soft-glow: rgba(111, 205, 170, 0.08);
 }
 
 * {
@@ -56,12 +97,12 @@ body {
   font-family: var(--font-body);
   background: radial-gradient(
       circle at top left,
-      rgba(78, 147, 122, 0.16),
+      var(--color-primary-glow),
       transparent 34rem
     ),
     radial-gradient(
       circle at top right,
-      rgba(216, 140, 96, 0.14),
+      var(--color-accent-soft),
       transparent 28rem
     ),
     var(--color-background);
@@ -99,7 +140,7 @@ svg {
 }
 
 ::selection {
-  background: rgba(78, 147, 122, 0.25);
+  background: var(--color-primary-soft);
   color: var(--color-text);
 }
 
@@ -119,7 +160,7 @@ svg {
 }
 
 .surface {
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--color-surface-transparent);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
@@ -140,7 +181,7 @@ svg {
   width: fit-content;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(78, 147, 122, 0.12);
+  background: var(--color-primary-soft);
   color: var(--color-primary-dark);
   font-size: 0.875rem;
   font-weight: 600;
@@ -157,7 +198,7 @@ svg {
 /* Focus styles */
 
 :focus-visible {
-  outline: 3px solid rgba(78, 147, 122, 0.45);
+  outline: 3px solid var(--color-primary-soft);
   outline-offset: 3px;
 }
 
@@ -174,32 +215,4 @@ svg {
 
 .mantine-Card-root {
   border-color: var(--color-border);
-}
-
-/* Optional dark mode support if you enable Mantine colorScheme */
-
-[data-mantine-color-scheme="dark"] {
-  --color-background: #101915;
-  --color-surface: #16241f;
-  --color-surface-muted: #1d3029;
-  --color-text: #eef7f3;
-  --color-text-muted: #a9bbb4;
-  --color-border: rgba(168, 203, 183, 0.18);
-
-  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.28);
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.22);
-}
-
-[data-mantine-color-scheme="dark"] body {
-  background: radial-gradient(
-      circle at top left,
-      rgba(78, 147, 122, 0.2),
-      transparent 34rem
-    ),
-    radial-gradient(
-      circle at top right,
-      rgba(216, 140, 96, 0.12),
-      transparent 28rem
-    ),
-    var(--color-background);
 }
