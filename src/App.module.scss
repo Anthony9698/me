@@ -8,5 +8,6 @@
     radial-gradient(circle at 24% 45%, var(--hero-soft-glow), transparent 22rem),
     var(--color-background);
   min-height: 100dvh;
-  padding: 0 var(--mantine-spacing-xl);
+  padding: var(--mantine-spacing-xl);
+  overflow-x: hidden;
 }

@@ -1,11 +1,25 @@
 .projects {
   margin-top: 10rem;
-  padding: var(--mantine-spacing-lg);
+  padding: 1rem 4rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 
   .projectCard {
     display: flex;
     flex-direction: column;
     padding: 0;
+    max-width: 550px;
+    position: relative;
 
     .projectImage {
       flex: 1.25;
@@ -20,9 +34,16 @@
 
       .projectStack {
         display: flex;
+        flex-wrap: wrap;
         gap: var(--mantine-spacing-md);
         margin-top: var(--mantine-spacing-md);
       }
     }
+  }
+
+  button {
+    width: fit-content;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
   }
 }

@@ -6,9 +6,9 @@ import PythonIcon from "../assets/python.webp";
 import AWSIcon from "../assets/aws.webp";
 import Torc from "../assets/torc4.png";
 
-export default function Hero() {
+export default function Hero({ ref }) {
   return (
-    <Box className={classes.hero}>
+    <Box className={classes.hero} ref={ref}>
       <Box className={classes.intro}>
         <Title>
           I build software that makes complex workflows

@@ -1,0 +1,63 @@
+.about {
+  margin-top: 4rem;
+  display: flex;
+  padding: 4rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  background-color: var(--color-surface);
+  border-radius: 1rem;
+  gap: 4rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mantine-spacing-xl);
+
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: var(--mantine-spacing-md);
+      width: fit-content;
+
+      .icon {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+
+  .right {
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--mantine-spacing-xl);
+
+    h3 {
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    button {
+      width: fit-content;
+
+      a {
+        color: var(--color-surface);
+      }
+    }
+  }
+
+  .contact {
+    flex: 0.25;
+    display: flex;
+    align-items: flex-end;
+    gap: var(--mantine-spacing-sm);
+  }
+}

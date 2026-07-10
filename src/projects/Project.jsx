@@ -1,8 +1,14 @@
-import { Card, Box, Image, Title, Text, Chip } from "@mantine/core";
+import { Card, Box, Image, Title, Text, Chip, Button } from "@mantine/core";
 import classes from "./Projects.module.scss";
 import { getColorFromWord } from "../utils/WordColor";
 
-export default function Project({ coverImage, title, description, stack }) {
+export default function Project({
+  coverImage,
+  title,
+  description,
+  stack,
+  link,
+}) {
   return (
     <Card
       className={classes.projectCard}
@@ -38,6 +44,11 @@ export default function Project({ coverImage, title, description, stack }) {
           ))}
         </Box>
       </Box>
+      <Button variant="light">
+        <a target="_blank" href={link}>
+          View App
+        </a>
+      </Button>
     </Card>
   );
 }

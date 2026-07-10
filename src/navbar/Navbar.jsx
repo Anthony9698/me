@@ -12,7 +12,11 @@ import { MdOutlineNightlightRound } from "react-icons/md";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { useDisclosure } from "@mantine/hooks";
 
-export default function Navbar() {
+export default function Navbar({
+  scrollToHome,
+  scrollToProjects,
+  scrollToAbout,
+}) {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme("light");
   const [burgerOpened, { toggle: toggleBurger }] = useDisclosure(false);
@@ -33,16 +37,44 @@ export default function Navbar() {
         padding="md"
         size="sm"
       >
-        <NavLink label="Home" />
-        <NavLink label="Projects" />
-        <NavLink label="About" />
-        <NavLink label="Contact" />
+        <NavLink
+          label="Home"
+          onClick={() => {
+            scrollToHome();
+            toggleBurger();
+          }}
+        />
+        <NavLink
+          label="Projects"
+          onClick={() => {
+            scrollToProjects();
+            toggleBurger();
+          }}
+        />
+        <NavLink
+          label="About"
+          onClick={() => {
+            scrollToAbout();
+            toggleBurger();
+          }}
+        />
       </Drawer>
       <Box className={classes.navLinks}>
-        <NavLink className={classes.navLink} label="Home" />
-        <NavLink className={classes.navLink} label="Projects" />
-        <NavLink className={classes.navLink} label="About" />
-        <NavLink className={classes.navLink} label="Contact" />
+        <NavLink
+          className={classes.navLink}
+          label="Home"
+          onClick={scrollToHome}
+        />
+        <NavLink
+          className={classes.navLink}
+          label="Projects"
+          onClick={scrollToProjects}
+        />
+        <NavLink
+          className={classes.navLink}
+          label="About"
+          onClick={scrollToAbout}
+        />
       </Box>
       <ActionIcon
         variant="transparent"
